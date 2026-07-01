@@ -88,6 +88,52 @@ body {
   animation: soft-float 7s ease-in-out infinite;
 }
 
+.top-reveal-shell {
+  inset-inline: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  z-index: 50;
+}
+
+.top-reveal-hitbox {
+  display: block;
+  height: 22px;
+  pointer-events: auto;
+}
+
+.top-reveal-header {
+  opacity: 0;
+  pointer-events: auto;
+  transform: translateY(calc(-100% - 22px));
+  transition:
+    transform 520ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 420ms ease;
+}
+
+.top-reveal-shell:hover .top-reveal-header,
+.top-reveal-shell:focus-within .top-reveal-header {
+  opacity: 1;
+  transform: translateY(-22px);
+}
+
+@media (hover: none), (pointer: coarse) {
+  .top-reveal-shell {
+    pointer-events: auto;
+    position: sticky;
+    top: 0;
+  }
+
+  .top-reveal-hitbox {
+    display: none;
+  }
+
+  .top-reveal-header {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @supports (animation-timeline: view()) {
   .reveal {
     animation-timeline: view();
