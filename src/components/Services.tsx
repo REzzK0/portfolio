@@ -1,56 +1,51 @@
 const services = [
   {
     title: "Лендинги",
-    description:
-      "Одностраничные сайты для услуг, записи, заявок и теста новых направлений.",
-    details: ["Структура оффера", "Адаптивная верстка", "Формы и аналитика"],
+    description: "Страницы для рекламы, услуг, записи и заявок.",
+    index: "01",
   },
   {
     title: "Telegram-боты",
     description:
-      "Боты, которые принимают заявки, задают вопросы, записывают клиентов и уведомляют команду.",
-    details: ["Сценарии диалогов", "Заявки в чат", "Интеграции с таблицами"],
+      "Боты для заявок, уведомлений, FAQ, записи и простых сценариев.",
+    index: "02",
   },
   {
     title: "Мини-приложения",
     description:
-      "Небольшие веб-инструменты: кабинеты, калькуляторы, мини-CRM и внутренние панели.",
-    details: ["Логика под процесс", "Удобные таблицы", "Роли и статусы"],
+      "Небольшие веб-сервисы, панели заявок, каталоги и CRM-подобные решения.",
+    index: "03",
   },
 ];
 
 export function Services() {
   return (
-    <section className="px-5 pb-16 pt-12 sm:px-8 sm:py-20 lg:px-12" id="services">
+    <section className="px-5 py-20 sm:px-8 lg:px-10" id="services">
       <div className="mx-auto max-w-7xl">
-        <div className="max-w-2xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-teal-200">
-            Услуги
+        <div className="reveal grid gap-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+          <p className="text-sm font-semibold uppercase text-[#FF7A00]">
+            Что я делаю
           </p>
-          <h2 className="mt-3 text-3xl font-semibold text-white sm:text-5xl">
-            Собираю понятные инструменты вместо хаоса в переписках
+          <h2 className="max-w-4xl text-4xl font-semibold leading-[1.02] text-[#1C120A] sm:text-6xl">
+            Аккуратные цифровые инструменты под реальный рабочий процесс
           </h2>
         </div>
 
-        <div className="mt-10 grid gap-4 md:grid-cols-3">
+        <div className="mt-12 grid gap-4 md:grid-cols-3">
           {services.map((service) => (
             <article
-              className="rounded-lg border border-white/10 bg-white/[0.035] p-6 transition hover:border-teal-200/40 hover:bg-white/[0.055]"
+              className="reveal group rounded-lg border border-[#1C120A]/10 bg-[#FFF7EC] p-6 shadow-[0_22px_70px_rgba(28,18,10,0.07)] transition duration-500 hover:-translate-y-2 hover:border-[#FF7A00]/45 hover:shadow-[0_30px_90px_rgba(28,18,10,0.12)]"
               key={service.title}
             >
-              <div className="mb-6 flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-zinc-950 text-lg font-semibold text-teal-200">
-                {service.title.slice(0, 1)}
-              </div>
-              <h3 className="text-xl font-semibold text-white">{service.title}</h3>
-              <p className="mt-3 leading-7 text-zinc-300">{service.description}</p>
-              <ul className="mt-6 space-y-2 text-sm text-zinc-400">
-                {service.details.map((detail) => (
-                  <li className="flex gap-2" key={detail}>
-                    <span className="mt-2 h-1.5 w-1.5 rounded-full bg-amber-300" />
-                    <span>{detail}</span>
-                  </li>
-                ))}
-              </ul>
+              <span className="text-sm font-semibold text-[#FF7A00]">
+                {service.index}
+              </span>
+              <h3 className="mt-16 text-2xl font-semibold text-[#1C120A]">
+                {service.title}
+              </h3>
+              <p className="mt-4 leading-7 text-[#1C120A]/65">
+                {service.description}
+              </p>
             </article>
           ))}
         </div>

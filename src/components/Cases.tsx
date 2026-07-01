@@ -1,72 +1,81 @@
 const cases = [
   {
-    title: "Сайт для салона",
-    type: "Лендинг",
+    title: "Лендинг для салона",
     description:
-      "Страница с услугами, ценами, быстрым контактом и формой записи для администратора.",
-    result: "Больше заявок из рекламы и понятный путь до записи.",
+      "Тёплая страница услуг с записью, ценами и быстрым контактом.",
+    features: ["первый экран", "форма записи", "адаптив под рекламу"],
   },
   {
     title: "Бот для заявок",
-    type: "Telegram",
-    description:
-      "Бот собирает имя, услугу, время и контакты, а затем отправляет заявку в рабочий чат.",
-    result: "Менеджер получает уже структурированный запрос.",
+    description: "Telegram-сценарий, который собирает запрос и отправляет его в чат.",
+    features: ["вопросы клиенту", "уведомления", "структура заявки"],
   },
   {
-    title: "Мини-CRM",
-    type: "Веб-приложение",
+    title: "Мини-CRM для мастера",
     description:
-      "Легкая панель со статусами заказов, заметками, фильтрами и историей обращений.",
-    result: "Команда видит очередь задач без сложной CRM-системы.",
+      "Небольшая панель, где видно заказы, статусы и ближайшие задачи.",
+    features: ["статусы", "заметки", "простая таблица"],
   },
 ];
 
 export function Cases() {
   return (
-    <section
-      className="border-y border-white/10 bg-[#0b0f0d] px-5 py-20 sm:px-8 lg:px-12"
-      id="cases"
-    >
+    <section className="px-5 py-20 sm:px-8 lg:px-10" id="cases">
       <div className="mx-auto max-w-7xl">
-        <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+        <div className="reveal flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div className="max-w-2xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-amber-200">
-              Демо-кейсы
+            <p className="text-sm font-semibold uppercase text-[#FF7A00]">
+              Кейсы
             </p>
-            <h2 className="mt-3 text-3xl font-semibold text-white sm:text-5xl">
-              Типовые задачи, которые можно быстро запустить
+            <h2 className="mt-4 text-4xl font-semibold leading-[1.02] text-[#1C120A] sm:text-6xl">
+              Демо-задачи, похожие на настоящие проекты
             </h2>
           </div>
-          <p className="max-w-md leading-7 text-zinc-400">
-            Каждый кейс можно адаптировать под нишу: услуги, обучение, ремонт,
-            доставка, локальный сервис или онлайн-консультации.
+          <p className="max-w-md text-lg leading-8 text-[#1C120A]/64">
+            Не показываю чужие данные. Эти карточки демонстрируют тип логики,
+            интерфейса и результата, который можно собрать под вашу нишу.
           </p>
         </div>
 
-        <div className="mt-10 grid gap-4 lg:grid-cols-3">
+        <div className="mt-12 grid gap-4 lg:grid-cols-3">
           {cases.map((item) => (
             <article
-              className="group overflow-hidden rounded-lg border border-white/10 bg-zinc-950/70"
+              className="reveal group flex min-h-[420px] flex-col rounded-lg border border-[#1C120A]/10 bg-[#F8EBD8] p-6 transition duration-500 hover:-translate-y-2 hover:bg-[#FFF7EC] hover:shadow-[0_30px_90px_rgba(28,18,10,0.12)]"
               key={item.title}
             >
-              <div className="flex h-44 flex-col justify-between border-b border-white/10 bg-[linear-gradient(135deg,rgba(45,212,191,0.16),rgba(245,158,11,0.12)_45%,rgba(255,255,255,0.04))] p-5">
-                <span className="w-fit rounded-full bg-black/35 px-3 py-1 text-xs font-semibold text-zinc-100">
-                  {item.type}
+              <div className="flex items-center justify-between">
+                <span className="rounded-full bg-[#FF7A00]/12 px-3 py-1 text-xs font-semibold text-[#9B4A00]">
+                  Демо-кейс
                 </span>
-                <div className="space-y-2">
-                  <div className="h-2 w-2/3 rounded-full bg-white/70" />
-                  <div className="h-2 w-1/2 rounded-full bg-white/35" />
-                  <div className="h-10 rounded-md border border-white/12 bg-black/20" />
-                </div>
+                <span className="h-3 w-3 rounded-full bg-[#FF7A00]" />
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-white">{item.title}</h3>
-                <p className="mt-3 leading-7 text-zinc-300">{item.description}</p>
-                <p className="mt-5 rounded-lg border border-white/10 bg-white/[0.035] p-4 text-sm leading-6 text-teal-100">
-                  {item.result}
+
+              <div className="mt-14">
+                <h3 className="text-3xl font-semibold text-[#1C120A]">
+                  {item.title}
+                </h3>
+                <p className="mt-4 leading-7 text-[#1C120A]/66">
+                  {item.description}
                 </p>
               </div>
+
+              <ul className="mt-8 space-y-3 text-sm text-[#1C120A]/70">
+                {item.features.map((feature) => (
+                  <li
+                    className="border-t border-[#1C120A]/10 pt-3"
+                    key={feature}
+                  >
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+
+              <a
+                className="mt-auto inline-flex pt-8 text-sm font-semibold text-[#1C120A] transition group-hover:text-[#FF7A00]"
+                href="#contact"
+              >
+                Подробнее
+              </a>
             </article>
           ))}
         </div>
