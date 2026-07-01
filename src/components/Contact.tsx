@@ -17,7 +17,9 @@ export function Contact() {
 
           <div className="lg:justify-self-end">
             <a
-              href="#"
+              href="https://t.me/WEXxxx0t"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex h-12 w-full items-center justify-center rounded-full bg-[#FF7A00] px-6 text-sm font-semibold text-[#1C120A] transition duration-300 hover:-translate-y-1 hover:bg-[#FFF7EC] sm:w-auto"
             >
               Написать в Telegram

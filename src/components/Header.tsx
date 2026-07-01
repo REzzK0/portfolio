@@ -32,7 +32,9 @@ export function Header() {
         </nav>
 
         <a
-          href="#contact"
+          href="https://t.me/WEXxxx0t"
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-flex h-10 items-center justify-center rounded-full bg-[#1C120A] px-4 text-sm font-semibold text-[#FFF7EC] transition hover:-translate-y-0.5 hover:bg-[#FF7A00]"
         >
           Обсудить

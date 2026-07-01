@@ -27,7 +27,9 @@ export function Hero() {
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
-                href="#contact"
+                href="https://t.me/WEXxxx0t"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex h-12 items-center justify-center rounded-full bg-[#1C120A] px-6 text-sm font-semibold text-[#FFF7EC] transition duration-300 hover:-translate-y-1 hover:bg-[#FF7A00] focus:outline-none focus:ring-2 focus:ring-[#FF7A00] focus:ring-offset-2 focus:ring-offset-[#F3E8D8]"
               >
                 Обсудить проект
