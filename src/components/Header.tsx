@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
 const navItems = [
   { label: "Услуги", href: "#services" },
   { label: "Кейсы", href: "#cases" },
@@ -6,8 +10,23 @@ const navItems = [
 ];
 
 export function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const updateHeaderState = () => {
+      setIsScrolled(window.scrollY > 12);
+    };
+
+    updateHeaderState();
+    window.addEventListener("scroll", updateHeaderState, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", updateHeaderState);
+    };
+  }, []);
+
   return (
-    <div className="top-reveal-shell">
+    <div className="top-reveal-shell" data-scrolled={isScrolled}>
       <div className="top-reveal-hitbox" aria-hidden="true" />
       <header className="top-reveal-header border-b border-[#1C120A]/5 bg-[#F3E8D8]/82 px-5 py-4 shadow-[0_18px_50px_rgba(28,18,10,0.05)] backdrop-blur-xl sm:px-8 lg:px-10">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4">

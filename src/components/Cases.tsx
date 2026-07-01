@@ -20,9 +20,10 @@ const cases = [
 
 export function Cases() {
   return (
-    <section className="px-5 py-20 sm:px-8 lg:px-10" id="cases">
+    <section className="relative isolate px-5 py-20 sm:px-8 lg:px-10" id="cases">
+      <div className="decor-thread scroll-drift-reverse right-[4%] top-8 hidden lg:block" />
       <div className="mx-auto max-w-7xl">
-        <div className="reveal flex flex-col justify-between gap-6 md:flex-row md:items-end">
+        <div className="reveal-right flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div className="max-w-2xl">
             <p className="text-sm font-semibold uppercase text-[#FF7A00]">
               Кейсы
@@ -38,11 +39,13 @@ export function Cases() {
         </div>
 
         <div className="mt-12 grid gap-4 lg:grid-cols-3">
-          {cases.map((item) => (
+          {cases.map((item, index) => (
             <article
-              className="reveal group flex min-h-[420px] flex-col rounded-lg border border-[#1C120A]/10 bg-[#F8EBD8] p-6 transition duration-500 hover:-translate-y-2 hover:bg-[#FFF7EC] hover:shadow-[0_30px_90px_rgba(28,18,10,0.12)]"
+              className="reveal-scale group relative flex min-h-[420px] flex-col overflow-hidden rounded-lg border border-[#1C120A]/10 bg-[#F8EBD8]/92 p-6 backdrop-blur-sm transition duration-500 hover:-translate-y-2 hover:bg-[#FFF7EC] hover:shadow-[0_30px_90px_rgba(28,18,10,0.12)]"
+              style={{ animationDelay: `${index * 90}ms` }}
               key={item.title}
             >
+              <div className="absolute -right-10 -top-10 h-36 w-36 rounded-full bg-[#FF7A00]/9 transition duration-700 group-hover:scale-125" />
               <div className="flex items-center justify-between">
                 <span className="rounded-full bg-[#FF7A00]/12 px-3 py-1 text-xs font-semibold text-[#9B4A00]">
                   Демо-кейс
